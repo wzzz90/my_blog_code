@@ -66,9 +66,19 @@ hexo的主题有很多种，无论是hexo官网主题<https://hexo.io/themes/>�
 1.首先需要安装hexo-wordcount
 `npm i --save hexo-wordcount`
 
-2.然后在themes\yilia\layout_partial\left-col.ejs中添加
+2.然后在themes\yilia\layout_partial\left-col.ejs中
+```
+	<nav>
+        总文章数 <%=site.posts.length%>
+    </nav>
+
+```
+在上面的代码后加上
+
 `总字数 <span class="post-count"><%= totalcount(site, '0,0.0a') %></span>
 `
+
+
 在themes\yilia\layout_partial\article.ejs中的header下面加入
 ```
 <div align="center" class="post-count">
